@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-content: center;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: -2%;
+    margin-top: -2%;
+    padding: 15px;
+}
+
+.table-container {
+    height: 300px;
+}
+
+table {
+    width: 140%;
+    border-collapse: collapse;
+    margin-top: -5%;
+    margin-left: 3%;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    height: 10px;
+}
+
+table th {
+    background-color: rgb(28, 140, 245);
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #c4def8;
+    width: 16%;
+    height: 100%;
+}
+
+.sidebar-button {
+    margin: 5px;
+    padding: 10px;
+    background-color: rgb(28, 140, 245);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 150px;
+    margin-left: 10%;
+}
+
+.logout-button {
+    width: 150px;
+    padding: 8px;
+    margin-top: 130px;
+    margin-left: 10%;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: rgb(17, 100, 179);
+}
+
+.profile-holder {
+    text-align: center;
+    font-size: 15px;
+    padding: 20%;
+    background-color: rgb(28, 140, 245);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 50%;
+    margin-top: 8%;
+    margin-left: 15%;
+}
+
+.profile-holder img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.right-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: rgb(28, 140, 245);
+    overflow-y: auto;
+    z-index: 1;
+    border-left: 1px solid #ccc;
+    width: 23%;
+}
+
+main {
+    margin-right: 220px;
+}
+
+.right-sidebar h2 {
+    padding: 30px;
+    text-align: center;
+}
+
+.right-sidebar p {
+    padding: 20px;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Dealership - Branches</title>
+    <link rel="stylesheet" type="text/css" href="abranches.css">
+    <link rel="stylesheet" type="text/css" href="afunctions.css">
+</head>
+<body>
+<div class="sidebar">
+    <div class="profile-holder">
+        <!-- Add your profile picture here -->
+        <img src="your-profile-image.jpg" alt="Profile Picture">
+    </div>
+    <button class="sidebar-button active" id="viewCarTypeButton">Car Type</button>
+    <button class="sidebar-button" id="branchButton">Branch</button>
+    <button class="sidebar-button" id="customerButton">Customer</button>
+    <button class="logout-button">Logout</button>
+</div>
+
+
+    <main>
+        <div class="content-container">
+                <h1>Branches</h1>
+            </div>
+            <div class="table-container">
+                <table>
+                    <tr class="table-header">
+                        <th>Branch Name</th>
+                        <th>Total Sold Cars</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr class="table-body">
+                    </tr>
+                    
+                    <!-- Repeat the above structure for each branch -->
+                </table>
+            </div>
+        </div>
+    </main>
+    
+
+<!-- Modal for editing a branch (initially hidden) -->
+<div id="edit-branch-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeEditModal()">&times;</span>
+        <h2>Edit Branch</h2>
+        <form id="edit-branch-form">
+            <label for="edit-branch-name">Branch Name:</label>
+            <input type="text" id="edit-branch-name" name="edit-branch-name" required>
+            <br>
+            <label for="edit-total-sold-cars">Total Sold Cars:</label>
+            <input type="number" id="edit-total-sold-cars" name="edit-total-sold-cars" required>
+            <br>
+            <!-- Add a hidden input field to store the branch ID -->
+            <input type="hidden" id="edit-branch-id">
+            <!-- Add a "Submit" button for the edited data -->
+            <button type="button" id="update-branch">Update</button>
+        </form>
+    </div>
+</div>
+
+
+<script src="afunctions.js"></script>
+
+<script>
+        // Add an event listener to the "Customer" button
+    document.getElementById("viewCarTypeButton").addEventListener("click", function () {
+          // Redirect to the customer page
+        window.location.href = "http://localhost/Cartype.php/Branch/Cartypes/car_types.html";
+    });
+    </script>
+
+<script>
+    document.getElementById("branchButton").addEventListener("click", function () {
+        window.location.href = "http://localhost/Cartype.php/Branch/branches.html";
+    });
+    </script>
+
+<script>
+    document.getElementById("customerButton").addEventListener("click", function () {
+        window.location.href = "http://localhost/Cartype.php/Branch/Customers/customers.html";
+    });
+    </script>
+    
+</body>
+</html>

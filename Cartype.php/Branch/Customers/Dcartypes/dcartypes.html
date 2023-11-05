@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Dealership - Car Type</title>
+    <link rel="stylesheet" type="text/css" href="dcartypes.css">
+    <link rel="stylesheet" type="text/css" href="dfunctions.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile-holder">
+            <!-- Add your profile picture here -->
+            <img src="your-profile-image.jpg" alt="Profile Picture">
+        </div>
+        <button class="sidebar-button active" id="viewCarTypeButton">Car Type</button>
+        <button class="sidebar-button" id="branchButton">Branch</button>
+        <button class="sidebar-button" id="customerButton">Customer</button>
+        <button class="logout-button">Logout</button>
+    </div>
+
+    <main>
+        <div class="top-bar">
+            <h1 id="carTypeTitle">Car Type</h1>
+        </div>
+        <div class="car-type-details">
+            <!-- Table of car type details (Code, Description, Price, Sold Cars) -->
+            <table id="carTypeTable">
+                <tr>
+                    <th>Code</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Sold Cars</th>
+                    <th>Actions</th>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+
+    <div class="right-sidebar">
+        <h2>Buy a Car</h2>
+        <form id="buy-car-form">
+            <label for="branch-name">Branch Name:</label>
+            <input type="text" id="branch-name" name="branch-name" required>
+            <br>
+            <label for="car-code">Code:</label>
+            <input type="text" id="car-code" name="car-code" required>
+            <br>
+            <label for="car-description">Description:</label>
+            <input type="text" id="car-description" name="car-description" required>
+            <br>
+            <label for="car-price">Price:</label>
+            <input type="number" id="car-price" name="car-price" required>
+            <br>
+            <label for="customer-name">Name of Customer:</label>
+            <input type="text" id="customer-name" name="customer-name" required>
+            <br>
+            <label for="contact-info">Contact Info:</label>
+            <input type="text" id="contact-info" name="contact-info" required>
+            <br>
+            <label for="customer-address">Address:</label>
+            <input type="text" id="customer-address" name="customer-address" required>
+            <br>
+            <label for="purchase-date-time">Date and Time Purchased:</label>
+            <input type="datetime-local" id="purchase-date-time" name="purchase-date-time" required>
+            <br>
+            <button type="button" id="buy-car-button">Confirm</button>
+        </form>
+    </div>
+    
+    <!-- Modal for editing a car type (initially hidden) -->
+<div id="edit-car-type-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeEditCarTypeModal()">&times;</span>
+        <h2>Edit Car Type</h2>
+        <form id="edit-car-type-form">
+            <label for="edit-car-type-code">Code:</label>
+            <input type="text" id="edit-car-type-code" name="edit-car-type-code" required>
+            <br>
+            <label for="edit-car-type-description">Description:</label>
+            <input type="text" id="edit-car-type-description" name="edit-car-type-description" required>
+            <br>
+            <label for="edit-car-type-price">Price:</label>
+            <input type="number" id="edit-car-type-price" name="edit-car-type-price" required>
+            <br>
+            <label for="edit-car-type-sold-cars">Total Sold Cars:</label>
+            <input type="number" id="edit-car-type-sold-cars" name="edit-car-type-sold-cars" required>
+            <br>
+            <!-- Add a hidden input field to store the car type ID -->
+            <input type="hidden" id="edit-car-type-id">
+            <!-- Add an "Update" button for the edited data -->
+            <button type="button" id="update-car-type">Update</button>
+        </form>
+    </div>
+</div>
+
+<div id="viewCustomerModal" class="custom-modal">
+    <div class="custom-modal-content ">
+        <span class="close" onclick="closeViewCustomerModal()">&times;</span>
+        <h2>Customer Information</h2>
+        <table>
+            <tr>
+                <th>Branch Name</th>
+                <th>Car Type</th>
+                <th>Name of Customer</th>
+                <th>Contact Info</th>
+                <th>Address</th>
+                <th>Date and Time Purchased</th>
+            </tr>
+            <tr>
+                <td id="customerInfoBranch"></td>
+                <td id="customerInfoCarType"></td>
+                <td id="customerInfoName"></td>
+                <td id="customerInfoContact"></td>
+                <td id="customerInfoAddress"></td>
+                <td id="customerInfoPurchaseDate"></td>
+            </tr>
+            <!-- Additional rows for customer information will be dynamically added here -->
+        </table>
+    </div>
+</div>
+
+    <script src="dfunctions.js"></script>
+    
+    <script>
+        // Get the branch name from the URL parameter
+        var urlParams = new URLSearchParams(window.location.search);
+        var branchName = urlParams.get("branchName");
+        // Set the branch name as the title
+        document.getElementById("carTypeTitle").textContent = branchName;
+    </script>
+    
+        
+<script>
+    // Add an event listener to the "Customer" button
+document.getElementById("viewCarTypeButton").addEventListener("click", function () {
+      // Redirect to the customer page
+    window.location.href = "http://localhost/Cartype.php/Branch/Cartypes/car_types.html";
+});
+</script>
+
+<script>
+document.getElementById("branchButton").addEventListener("click", function () {
+    window.location.href = "http://localhost/Cartype.php/Branch/branches.html";
+});
+</script>
+
+<script>
+document.getElementById("customerButton").addEventListener("click", function () {
+    window.location.href = "http://localhost/Cartype.php/Branch/Customers/customers.html";
+});
+</script>
+    </body>
+</html>

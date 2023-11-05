@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Dealership - Car Type</title>
+    <link rel="stylesheet" type="text/css" href="car_types.css">
+    <link rel="stylesheet" type="text/css" href="functions.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile-holder">
+            <!-- Add your profile picture here -->
+            <img src="your-profile-image.jpg" alt="Profile Picture">
+      </div>
+        <button class="sidebar-button active" id="viewCarTypeButton">Car Type</button>
+        <button class="sidebar-button" id="branchButton">Branch</button>
+        <button class="sidebar-button" id="customerButton">Customer</button>
+        <button class="logout-button">Logout</button>
+     </div>
+    <main>
+        <div class="top-bar">
+            <h1 id="carTypeTitle">Car Type</h1>
+        </div>
+        <div class="car-type-details">
+            <!-- Table of car type details (Code, Description, Price, Sold Cars) -->
+            <table id="carTypeTable">
+                <tr>
+                    <th>Code</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </table>
+        </div>
+    </main>
+    <div class="right-sidebar">
+        <h2>Add New Car Type</h2>
+        <form id="add-new-car-type-form">
+            <label for="new-car-type-code">Code:</label>
+            <input type="text" id="new-car-type-code" name="new-car-type-code" required>
+            <br>
+            <label for="new-car-type-description">Description:</label>
+            <input type="text" id="new-car-type-description" name="new-car-type-description" required>
+            <br>
+            <label for="new-car-type-price">Price:</label>
+            <input type="number" id="new-car-type-price" name="new-car-type-price" required>
+            <button type="button" id="add-new-car-type-button">Add Car Type</button>
+        </form>
+    </div>
+    <!-- Modal for editing a car type (initially hidden) -->
+<div id="edit-car-type-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeEditCarTypeModal()">&times;</span>
+        <h2>Edit Car Type</h2>
+        <form id="edit-car-type-form">
+            <label for="edit-car-type-code">Code:</label>
+            <input type="text" id="edit-car-type-code" name="edit-car-type-code" required>
+            <br>
+            <label for="edit-car-type-description">Description:</label>
+            <input type="text" id="edit-car-type-description" name="edit-car-type-description" required>
+            <br>
+            <label for="edit-car-type-price">Price:</label>
+            <input type="number" id="edit-car-type-price" name="edit-car-type-price" required>
+            <br>
+            <!-- Add a hidden input field to store the car type ID -->
+            <input type="hidden" id="edit-car-type-id">
+            <!-- Add an "Update" button for the edited data -->
+            <button type="button" id="update-car-type">Update</button>
+        </form>
+    </div>
+</div>
+
+  <script src="functions.js"></script>
+
+<script>
+document.getElementById("branchButton").addEventListener("click", function () {
+    window.location.href = "http://localhost/Cartype.php/Branch/branches.html";
+});
+</script>
+
+<script>
+document.getElementById("customerButton").addEventListener("click", function () {
+    window.location.href = "http://localhost/Cartype.php/Branch/Customers/customers.html";
+});
+</script>
+<script>
+document.getElementById("customerButton").addEventListener("click", function () {
+    window.location.href = "http://localhost/Cartype.php/Branch/Customers/customers.html";
+});
+</script>
+    
+    </body>
+</html>

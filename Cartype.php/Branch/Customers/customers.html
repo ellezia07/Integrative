@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Dealership - Customers</title>
+    <link rel="stylesheet" type="text/css" href="customers.css">
+    <link rel="stylesheet" type="text/css" href="cfunctions.css">
+</head>
+<body>
+<div class="sidebar">
+    <div class="profile-holder">
+        <!-- Add your profile picture here -->
+        <img src="your-profile-image.jpg" alt="Profile Picture">
+    </div>
+    <button class="sidebar-button active" id="viewCarTypeButton">Car Type</button>
+    <button class="sidebar-button" id="branchButton">Branch</button>
+    <button class="sidebar-button" id="customerButton">Customer</button>
+    <button class="logout-button">Logout</button>
+</div>
+<main>
+    <div class="content-container">
+        <h1>Customers</h1>
+        <!-- Add a table to display the list of customers -->
+        <div class="table-container">
+            <table>
+                <tr class="table-header">
+                    <th>Name</th>
+                    <th>Contact Info</th>
+                    <th>Address</th>
+                    <th>Actions</th>
+                </tr>
+                <tr class="table-body">
+                    <!-- Customer data will be populated here -->
+                </tr>
+                <!-- Repeat the structure for each customer -->
+            </table>
+        </div>
+    </div>
+</main>
+
+
+<div class="right-sidebar">
+    <h2>Add New Customer</h2>
+    <form id="add-new-customer-form">
+        <label for="new-customer-name">Name:</label>
+        <input type="text" id="new-customer-name" name="new-customer-name" required>
+        <br>
+        <label for="new-customer-contact">Contact Info:</label>
+        <input type="text" id="new-customer-contact" name="new-customer-contact" required>
+        <br>
+        <label for="new-customer-address">Address:</label>
+        <input type="text" id="new-customer-address" name="new-customer-address" required>
+        <br>
+        <button type="button" id="add-new-customer-button">Add Customer</button>
+    </form>
+</div>
+
+<!-- Modal for editing a customer (initially hidden) -->
+<div id="edit-customer-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-edit-customer-modal" class="close" onclick="closeEditCustomerModal()">&times;</span>
+
+        <h2>Edit Customer</h2>
+        <form id="edit-customer-form">
+            <label for="edit-customer-name">Name:</label>
+            <input type="text" id="edit-customer-name" name="edit-customer-name" required>
+            <br>
+            <label for="edit-customer-contact">Contact Info:</label>
+            <input type="text" id="edit-customer-contact" name="edit-customer-contact" required>
+            <br>
+            <label for="edit-customer-address">Address:</label>
+            <input type="text" id="edit-customer-address" name="edit-customer-address" required>
+            <br>
+            <!-- Add a hidden input field to store the customer ID -->
+            <input type="hidden" id="edit-customer-id">
+            <!-- Add a "Submit" button for the edited data -->
+            <button type="button" id="update-customer">Update</button>
+        </form>
+    </div>
+</div>
+<script src="cfunctions.js"></script>
+<script>
+        function viewProducts(button) {
+        var branchRow = button.closest("tr"); // Get the closest table row to the button
+        var branchName = branchRow.cells[0].textContent; // Get the branch name from the row
+        window.location.href = `http://localhost/Cartype.php/Branch/Customers/Abranch/abranches.html?branchName=${branchName}`; // Redirect to the cartypes.php page with the branch name as a URL parameter
+    }
+    </script>
+
+<script>
+    document.getElementById("branchButton").addEventListener("click", function () {
+        window.location.href = "http://localhost/Cartype.php/Branch/branches.html";
+    });
+    </script>
+
+<script>
+    document.getElementById("customerButton").addEventListener("click", function () {
+        window.location.href = "http://localhost/Cartype.php/Branch/Customers/customers.html";
+    });
+    </script>
+
+</body>
+</html>
